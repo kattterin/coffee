@@ -6,26 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>750</width>
-    <height>505</height>
+    <width>825</width>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Coffee</string>
+   <string>addEditCoffeeForm</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QPushButton" name="pushButton">
       <property name="minimumSize">
        <size>
@@ -46,7 +36,17 @@
        </font>
       </property>
       <property name="text">
-       <string>редактировать</string>
+       <string>добавить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>10</pointsize>
+       </font>
       </property>
      </widget>
     </item>
