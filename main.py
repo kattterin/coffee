@@ -4,6 +4,8 @@ from random import randint
 
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from addEditCoffeeForm import Ui_MainWindow2
+from main2 import Ui_MainWindow
 
 names = {0: 'id',
          1: 'variety_name',
@@ -19,11 +21,12 @@ class ReadOnlyDelegate(QtWidgets.QStyledItemDelegate):
         return
 
 
-class exam(QMainWindow):
+class exam(QMainWindow, Ui_MainWindow2):
     def __init__(self):
         super().__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
-        self.con = sqlite3.connect('coffee.sqlite.db')
+        self.setupUi(self)
+    #     uic.loadUi('addEditCoffeeForm.ui', self)
+        self.con = sqlite3.connect('data/coffee.sqlite.db')
         self.pushButton.clicked.connect(self.new)
         self.cur = self.con.cursor()
         self.select()
@@ -66,12 +69,14 @@ class exam(QMainWindow):
         self.tableWidget.setItemDelegateForColumn(0, delegate)
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
+
     def __init__(self):
         super().__init__()
+        self.setupUi(self)
 
-        uic.loadUi('main.ui', self)  # Загружаем дизайн
-        self.con = sqlite3.connect('coffee.sqlite.db')
+        # uic.loadUi('main2.ui', self)  # Загружаем дизайн
+        self.con = sqlite3.connect('data/coffee.sqlite.db')
         self.cur = self.con.cursor()
         self.w1 = exam()
 
